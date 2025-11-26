@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import NavBar from '../components/NavBar';
 
 export default function Subscribe() {
   const [loading, setLoading] = useState(false);
@@ -24,10 +25,10 @@ export default function Subscribe() {
 
   return (
     <div style={{ padding: '2rem' }}>
+      <NavBar />
       <h1>Subscribe to Pocket PT</h1>
-      <p>Unlock your personalized program and AI trainer.</p>
       <button onClick={handleSubscribe} disabled={loading}>
-        {loading ? 'Redirecting...' : 'Subscribe Now'}
+        {loading ? 'Loading...' : 'Subscribe Now'}
       </button>
       {error && <p>{error}</p>}
     </div>
