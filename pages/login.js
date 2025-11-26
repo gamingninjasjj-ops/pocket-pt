@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
+import NavBar from '../components/NavBar';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -25,15 +26,15 @@ export default function Login() {
   };
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div>
+      <NavBar />
       <h1>Login</h1>
       <form onSubmit={handleLogin}>
         <input
           type="email"
+          placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email address"
-          style={{ padding: '0.5rem', marginRight: '0.5rem' }}
           required
         />
         <button type="submit" disabled={loading}>
